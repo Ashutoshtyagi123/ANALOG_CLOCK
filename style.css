@@ -1,0 +1,200 @@
+* {
+    /* box-sizing: border-box; */
+    margin: 0;
+
+}
+
+body {
+    /* display: flex; */
+    /* flex-direction:column; */
+    height: 100vh;
+    background-color: #091921;
+    font-family: 'Jost', sans-serif;
+    transition: background-color 0.2s ease-in;
+
+
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6vw;
+    box-sizing: border-box;
+
+}
+.name p{
+    color: #091921;
+    background-color: #ffffff;
+    padding: 2px;
+    margin: 2px 0;
+    text-align: center;
+    font-size: 0.6rem;
+}
+.name h3{
+    color: #ffffff;
+    font-size: 0.8rem;
+
+}
+
+.main {
+    height: calc(88% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.light {
+    background-color: rgb(252, 244, 165);
+}
+
+.label {
+    background-color: #091921;
+    border-radius: 50px;
+    height: 24px;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    justify-self: auto;
+    transition: background-color 0.2s linear;
+    box-shadow: inset 0 -3px 6px rgba(255, 255, 255, 0.168), inset 0 3px 6px rgba(0, 0, 0, 0.259);
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+
+.ball {
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    left: 5px;
+    background-color: rgb(254, 254, 254);
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.ri-moon-clear-fill {
+    color: aliceblue;
+    padding: 0 2px;
+}
+
+.ri-sun-fill {
+    color: rgb(250, 255, 92);
+    padding: 0 2px;
+}
+
+.checkbox:checked+.label {
+    background-color: rgb(134, 199, 255);
+    
+
+}
+
+.checkbox:checked+.label .ball {
+    transform: translate(26px, 0);
+}
+
+/* Clock Css */
+
+.clock {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(TIME.gif);
+    background-size: cover;
+    border: 8px solid #091921;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+        inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+        0 15px 15px rgba(0, 0, 0, 0.05),
+        inset 0 15px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+   
+
+   
+}
+.clc-light{
+    background-color: rgb(255, 255, 255);
+    border: 8px solid rgb(255, 255, 255);
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.16),
+        inset 0 -15px 15px rgba(255, 255, 255, 0.16),
+        0 15px 15px rgba(0, 0, 0, 0.16),
+        inset 0 15px 15px rgba(0, 0, 0, 0.16);
+
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 15px; height: 15px;
+    background: var(--main-color);
+    border-radius: 50%;
+    z-index: 10;
+
+}
+
+.clock .hour , .hr{
+    height: 160px;
+    width: 160px;
+    display: flex;
+    position: absolute;
+    /* background-color: #fff; */
+}
+.clock .min , .mn{
+    height: 190px;
+    width: 190px;
+    position: absolute;
+}
+.clock .sec , .sc{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+}
+
+.hr ,  .mn, .sc{
+    display: flex;
+    justify-content: center;
+ 
+
+}
+
+.hr::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height:80px ;
+    background-color: #ff105e;
+    z-index: 5;
+    border-radius: 6px 6px;
+}
+:root{
+    --main-color: #ffffff;
+    
+}
+.mn::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height:90px ;
+    background-color: var(--main-color);
+    z-index: 6;
+    border-radius: 6px 6px;
+}
+.sc::before{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height:150px ;
+    background-color: var(--main-color);
+    z-index: 6;
+    border-radius: 6px 6px;
+}
